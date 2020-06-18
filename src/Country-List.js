@@ -8,7 +8,7 @@ const CountryListStyled = styled.div`
   display: grid;
   grid-row-gap: 2.3em;
   grid-auto-flow: columns;
-  grid-column-gap: 66px;
+  grid-column-gap: 75px;
   grid-template-columns: repeat(auto-fill, 270px);
   background: var(--background);
   justify-content: center;

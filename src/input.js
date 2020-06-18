@@ -15,11 +15,13 @@ const InputStyled = styled.label`
   }
   input {
     flex: 1;
+    color: var(--black);
     border: none;
     height: 48px;
     line-height: 48px;
     font-size: 0.7em;
     outline: 0;
+    background: var(--white);
     &::-webkit-input-placeholder {
       color: #c4c4c4;
     }
