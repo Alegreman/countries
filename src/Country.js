@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const CountryStyled = styled.div`
   width: 264px;
@@ -28,21 +29,25 @@ const CountryStyled = styled.div`
 `;
 
 function Country({ flag, name, population, region, capital }) {
+  const history = useHistory();
+  function handleClick() {
+    history.push(`/country/${name}`);
+  }
   return (
-    <CountryStyled>
-      <img loading='lazy' src={flag} alt='' />
+    <CountryStyled onClick={handleClick}>
+      <img src={flag} loading='lazy' alt='' />
       <div className='details'>
         <h2>{name}</h2>
         <p>
-          <strong> Population:</strong>
+          <strong> Population: </strong>
           {population}
         </p>
         <p>
-          <strong> Region:</strong>
+          <strong> Region: </strong>
           {region}
         </p>
         <p>
-          <strong> Capital:</strong>
+          <strong> Capital: </strong>
           {capital}
         </p>
       </div>
