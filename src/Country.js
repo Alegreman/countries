@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
-import slugify from 'slugify';
 
 const CountryStyled = styled.div`
   cursor: pointer;
@@ -42,25 +41,16 @@ const CountryStyled = styled.div`
 function Country({ flag, name, nativeName, population, region, capital, alpha2Code }) {
   const history = useHistory();
   function handleClick() {
-    history.push(`/country/${slugify(alpha2Code)}`);
+    history.push(`/country/${(alpha2Code)}`);
   }
   return (
     <CountryStyled onClick={handleClick}>
       <img src={flag} loading='lazy' alt='' />
       <div className='details'>
         <h2>{name}</h2>
-        <p>
-          <strong> Population: </strong>
-          {population}
-        </p>
-        <p>
-          <strong> Region: </strong>
-          {region}
-        </p>
-        <p>
-          <strong> Capital: </strong>
-          {capital}
-        </p>
+        <p><strong> Population: </strong>{population}</p>
+        <p><strong> Region: </strong>{region}</p>
+        <p><strong> Capital: </strong>{capital}</p>
       </div>
     </CountryStyled>
   );

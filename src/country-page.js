@@ -29,7 +29,7 @@ function CountryPage({ match, history }) {
 
   const DBcountry = useSelector(state =>
     state.countryList.find(
-      item => item.alpha2Code === match.params.id.replace('-', ' ')
+      item => item.alpha2Code === match.params.id
     )
   );
   const [country, setCountry] = useState(DBcountry);
@@ -48,7 +48,6 @@ function CountryPage({ match, history }) {
   function handleClick() {
     history.goBack();
   }
-  console.log(country);
   return (
     <CountryPageStyled>
       <Wrapper>

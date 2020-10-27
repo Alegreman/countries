@@ -11,9 +11,11 @@ export default function reducer(state, action) {
       } else {
         list = state.countryList;
       }
+      console.log(action.payload)
       const countryListByName = list.filter(country =>
         country.name.toLowerCase().includes(action.payload.toLowerCase())
       );
+      console.log(state)
       return { ...state, countryListByName };
     }
 

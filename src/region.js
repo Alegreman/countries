@@ -62,19 +62,17 @@ export const Region = () => {
   const filterByRegion = useSelector((state) => state.filterByRegion);
 
   const onRegionChange = (selectEvent) => {
-
     dispatch(filterByRegionAction(selectEvent));
   }
 
   return (
     <>
       <RegionFilterStyled>
-
-        <div className={`${dropdown ? 'dropdown open' : 'dropdown'}`} onClick={() => setdropdown(!dropdown)} id="filter">
+        <div className={`${dropdown ? 'dropdown open' : 'dropdown'}`} onClick={() => setdropdown(!dropdown)} onChange={() => setdropdown.value = 'Africa'} id="filter">
           Filter by Region
           <i className="fas fa-chevron-down"></i>
           <ul>
-            <li onClick={() => onRegionChange('Africa')}>Africa</li>
+            <li onClick={() => onRegionChange('Africa')} onChange={() => onRegionChange('Africa')}>Africa</li>
             <li onClick={() => onRegionChange('Americas')}>Americas</li>
             <li onClick={() => onRegionChange('Asia')}>Asia</li>
             <li onClick={() => onRegionChange('Europe')}>Europe</li>
